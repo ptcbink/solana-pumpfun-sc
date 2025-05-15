@@ -297,8 +297,8 @@ describe("pump fun", () => {
 
     await processTransaction(umi, txBuilder);
 
-    // const events = await getTxEventsFromTxBuilderResponse(connection, program, txRes);
-    // events.forEach(logEvent);
+    const events = await getTxEventsFromTxBuilderResponse(connection, program, txRes);
+    events.forEach(logEvent);
 
     const bondingCurveDataPost = await curveSdk.fetchData();
     const traderAtaBalancePost = await getTknAmount(
@@ -393,8 +393,8 @@ describe("pump fun", () => {
 
     // const txRes = await txBuilder.sendAndConfirm(umi);
     await processTransaction(umi, txBuilder);
-    // const events = await getTxEventsFromTxBuilderResponse(connection, program, txRes);
-    // events.forEach(logEvent)
+    const events = await getTxEventsFromTxBuilderResponse(connection, program, txRes);
+    events.forEach(logEvent)
     const global = await adminSdk.PumpScience.fetchGlobalData();
 
     assertGlobal(global, {
@@ -430,12 +430,12 @@ describe("pump fun", () => {
     const txBuilder = adminSdk.withdrawFees(simpleMintKp.publicKey);
 
     await processTransaction(umi, txBuilder);
-    // const events = await getTxEventsFromTxBuilderResponse(
-    //   connection,
-    //   program,
-    //   txRes
-    // );
-    // events.forEach(logEvent);
+    const events = await getTxEventsFromTxBuilderResponse(
+      connection,
+      program,
+      txRes
+    );
+    events.forEach(logEvent);
 
     const global = await adminSdk.PumpScience.fetchGlobalData();
 
@@ -463,8 +463,8 @@ describe("pump fun", () => {
     });
 
     await processTransaction(umi, txBuilder);
-    //   const events = await getTxEventsFromTxBuilderResponse(connection, program, txRes);
-    //   events.forEach(logEvent)
+      const events = await getTxEventsFromTxBuilderResponse(connection, program, txRes);
+      events.forEach(logEvent)
     const global = await adminSdk.PumpScience.fetchGlobalData();
     console.log("global", global);
     assertGlobal(global, {
@@ -483,7 +483,7 @@ describe("pump fun", () => {
       await processTransaction(umi, txBuilder);
       assert(false);
     } catch (e) {
-      // console.log(e);
+      console.log(e);
       assert(true);
     }
   });
