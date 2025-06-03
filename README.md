@@ -17,6 +17,7 @@ The contract employs a **piecewise linear fee structure** based on user particip
 The protocol defines two key administrative roles:
 
 - **Global Authority**: Responsible for managing global settings and whitelist configurations.
+- **Fork Migration**: Fork migration of pump.fun to migrate to pump.fun amm pool. This can handle in one transaction
 - **Migration Authority**: Handles the migration of tokens to Meteora.
 
 ### Whitelist Management
